@@ -9,7 +9,9 @@ struct Array{
 
 };
 
-void Display( struct Array arr){ // Function to display an array;
+
+// Function to display an array;
+void Display( struct Array arr){ 
 
     cout<< "Elements of the array are: "<< endl;
     for(int i = 0; i < arr.size ; i++){
@@ -21,7 +23,9 @@ void Display( struct Array arr){ // Function to display an array;
 
 }
 
-void Append(struct Array *arr, int x){ // Appending a value x to the end of the array
+
+// Appending a value x to the end of the array
+void Append(struct Array *arr, int x){ 
 
     if(arr->length < arr->size){
 
@@ -29,7 +33,9 @@ void Append(struct Array *arr, int x){ // Appending a value x to the end of the 
     }
 }
 
-void Insert(struct Array *arr, int index, int x){
+
+//Inserting an element x at a given index
+void Insert(struct Array *arr, int index, int x){ 
 
     if(index>=0 && index <= arr->length){
 
