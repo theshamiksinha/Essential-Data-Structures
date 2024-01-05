@@ -41,6 +41,41 @@ int LinearSearch(struct Array arr, int key){
     return -1;
 }
 
+void swap(int *x, int *y){
+
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+
+}
+
+//Transposition
+int ImprovedLinearSearch1(struct Array *arr, int key){
+
+    for(int i=0; i< arr->length; i++){
+
+        if(key == arr->A[i]){
+
+            swap(&arr->A[i], &arr->A[i-1]);
+            return i;
+        }
+    }
+}
+
+
+//Move to Head
+int ImprovedLinearSearch2(struct Array *arr, int key){
+
+    for(int i=0; i< arr->length; i++){
+
+        if(key == arr->A[i]){
+
+            swap(&arr->A[i], &arr->A[0]);
+            return i;
+        }
+    }
+}
 
 int main(){
 
@@ -48,7 +83,7 @@ int main(){
 
 
     
-    cout << LinearSearch(arr, 4) << endl;
+    cout << ImprovedLinearSearch1(&arr, 5) << endl;
 
     Display(arr);
 
