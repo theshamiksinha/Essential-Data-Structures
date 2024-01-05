@@ -49,6 +49,22 @@ void Insert(struct Array *arr, int index, int x){
     }
 }
 
+//Deleting an element at a given index and returning the deleted element
+int Delete(struct Array *arr, int index){
+
+    int x = 0;
+    if(index >= 0 && index < arr->length){
+
+        x = arr->A[index];
+        for(int i = index; i <arr->length-1;i++){
+
+            arr->A[i] = arr->A[i+1];
+        }
+
+        arr->length--;
+        return x;
+    }
+}
 
 int main(){
 
